@@ -131,17 +131,31 @@ function rotaMenor (origem, destino) {
         
     } else if(origem[0] === destino[0]) {
         // exemplo [0,0] e [0,7] mesma linha
-            console.log( Math.abs(origem[1] - destino[1])); // distância a percorrer na mesma linha
-            console.log("mesma linha") 
+        console.log( origem[1] - destino[1]); // distância a percorrer na mesma linha
+        console.log("mesma linha") 
+
+        if (origem[0] - destino[0] < 0) {
+            console.log("direita")
+        } else {
+            console.log("esquerda");
+        }
 
     } else if (origem[1] === destino[1]) {
         // exemplo [0,0] e [7,0] memsa coluna
-        console.log( Math.abs(origem[0] - destino[0])); // distância a percorrer na mesma coluna
+        console.log( origem[0] - destino[0]); // distância a percorrer na mesma coluna
         console.log("mesma coluna") 
+
+        if (origem[1] - destino[1] < 0) {
+            console.log("baixo")
+        } else {
+            console.log("cima");
+        }
+
     } else {
         // exemplo [0,0] e [7,7] linha e coluna diferentes
-        console.log(Math.abs(origem[0] - destino[0]) + Math.abs(origem[1] - destino[1]));
+        console.log(origem[0] - destino[0]) + Math.abs(origem[1] - destino[1]);
         console.log("diferentes") 
+
     }
     
 };
